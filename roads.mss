@@ -2086,7 +2086,7 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
         [zoom >= 12] { line-width: 0.9; }
         line-join: round;
         .roads_low_zoom[int_tunnel = 'yes'], #tunnels {
-          line-dasharray: 5,2;
+          line-opacity: 0;
         }
       }
       [zoom >= 12] {
@@ -2120,24 +2120,6 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
               dark/line-width: 3;
               light/line-width: 1;
             }
-          }
-        }
-        #tunnels {
-          line-color: #787878;
-          line-width: 2.8;
-          line-dasharray: 6,4;
-          line-clip: false;
-          [feature = 'railway_INT-spur-siding-yard'] {
-            line-color: #aaa;
-            line-width: 1.9;
-            line-dasharray: 3,3;
-            [zoom >= 18] {
-            line-width: 2.7;
-            }
-          }
-          [feature = 'railway_rail'][zoom >= 18] {
-            line-dasharray: 8,6;
-            line-width: 3.8;
           }
         }
       }
@@ -2264,22 +2246,6 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
         line/line-dasharray: 2,3;
         line/line-cap: round;
         line/line-join: round;
-      }
-    }
-
-    [feature = 'railway_construction'] {
-      [zoom >= 13] {
-        line-color: grey;
-        line-width: 2;
-        line-dasharray: 2,4;
-        line-join: round;
-        [zoom >= 14] {
-          line-dasharray: 2,3;
-        }
-        [zoom >= 15] {
-          line-width: 3;
-          line-dasharray: 3,3;
-        }
       }
     }
 
