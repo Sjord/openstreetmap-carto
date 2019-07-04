@@ -53,6 +53,7 @@ Stylesheet:
   - aerialways.mss
   - admin.mss
   - addressing.mss
+  - hillshade.mss
 Layer:
   - id: landcover-low-zoom
     geometry: polygon
@@ -2180,3 +2181,17 @@ Layer:
           ) AS amenity_low_priority_poly
     properties:
       minzoom: 14
+  - id: hillshade
+    geometry: raster
+    extent:
+      5.999991513079742,
+      44.999996911684434,
+      10.999996418183317,
+      47.99999498158698
+    Datasource:
+      file: data/hillshade.tif
+      type: gdal
+    srs-name: 900913
+    srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over
+    name: hillshade
+    layerId: hillshade
