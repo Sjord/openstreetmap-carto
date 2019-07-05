@@ -9,6 +9,7 @@
 @road-fill: #ddd;
 @footway-fill: salmon;
 @footway-fill-noaccess: #bbbbbb;
+@footway-fill-alpine: blue;
 @steps-fill: @footway-fill;
 @steps-fill-noaccess: #bbbbbb;
 @cycleway-fill: blue;
@@ -1870,6 +1871,11 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
         }
         line/line-color: @footway-fill;
         [access = 'no'] { line/line-color: @footway-fill-noaccess; }
+        [sac_scale = 'alpine_hiking'],
+        [sac_scale = 'demanding_alpine_hiking'],
+        [sac_scale = 'difficult_alpine_hiking'] {
+          line/line-color: @footway-fill-alpine;
+        }
         line/line-dasharray: 1,3;
         line/line-join: round;
         line/line-cap: round;
@@ -1894,6 +1900,11 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
         [zoom >= 15][int_surface = null] {
           line/line-color: @footway-fill;
           [access = 'no'] { line/line-color: @footway-fill-noaccess; }
+          [sac_scale = 'alpine_hiking'],
+          [sac_scale = 'demanding_alpine_hiking'],
+          [sac_scale = 'difficult_alpine_hiking'] {
+            line/line-color: @footway-fill-alpine;
+          }
           line/line-dasharray: 1,3,2,4;
           line/line-join: round;
           line/line-cap: round;
@@ -1912,6 +1923,11 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
         [zoom >= 15][int_surface = 'unpaved'] {
           line/line-color: @footway-fill;
           [access = 'no'] { line/line-color: @footway-fill-noaccess; }
+          [sac_scale = 'alpine_hiking'],
+          [sac_scale = 'demanding_alpine_hiking'],
+          [sac_scale = 'difficult_alpine_hiking'] {
+            line/line-color: @footway-fill-alpine;
+          }
           line/line-dasharray: 1,4;
           line/line-join: round;
           line/line-cap: round;

@@ -462,6 +462,7 @@ Layer:
             bicycle,
             tracktype,
             int_surface,
+            sac_scale,
             access,
             construction,
             service,
@@ -481,6 +482,7 @@ Layer:
                                       'concrete:plates', 'paving_stones', 'metal', 'wood', 'unhewn_cobblestone') THEN 'paved'
                   ELSE NULL
                 END AS int_surface,
+                sac_scale,
                 CASE WHEN access IN ('destination') THEN 'destination'::text
                   WHEN access IN ('no', 'private') THEN 'no'::text
                   ELSE NULL
@@ -510,6 +512,7 @@ Layer:
                 foot,
                 bicycle,
                 tracktype,
+                'null',
                 'null',
                 CASE
                   WHEN access IN ('destination') THEN 'destination'::text
@@ -716,6 +719,7 @@ Layer:
             bicycle,
             tracktype,
             int_surface,
+            sac_scale,
             access,
             construction,
             service,
@@ -735,6 +739,7 @@ Layer:
                                       'concrete:plates', 'paving_stones', 'metal', 'wood', 'unhewn_cobblestone') THEN 'paved'
                   ELSE NULL
                 END AS int_surface,
+                sac_scale,
                 CASE WHEN access IN ('destination') THEN 'destination'::text
                   WHEN access IN ('no', 'private') THEN 'no'::text
                   ELSE NULL
@@ -767,6 +772,7 @@ Layer:
                 foot,
                 bicycle,
                 tracktype,
+                'null',
                 'null',
                 CASE
                   WHEN access IN ('destination') THEN 'destination'::text
@@ -927,6 +933,7 @@ Layer:
             bicycle,
             tracktype,
             int_surface,
+            sac_scale,
             access,
             construction,
             service,
@@ -946,6 +953,7 @@ Layer:
                                       'concrete:plates', 'paving_stones', 'metal', 'wood', 'unhewn_cobblestone') THEN 'paved'
                   ELSE NULL
                 END AS int_surface,
+                sac_scale,
                 CASE WHEN access IN ('destination') THEN 'destination'::text
                   WHEN access IN ('no', 'private') THEN 'no'::text
                   ELSE NULL
@@ -975,6 +983,7 @@ Layer:
                 foot,
                 bicycle,
                 tracktype,
+                'null',
                 'null',
                 CASE
                   WHEN access IN ('destination') THEN 'destination'::text
