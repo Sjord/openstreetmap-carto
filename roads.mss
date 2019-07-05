@@ -135,10 +135,10 @@
 @trunk-link-width-z15:          7.8;
 @primary-width-z15:              10;
 @primary-link-width-z15:        7.8;
-@secondary-width-z15:             9;
-@secondary-link-width-z15:        7;
-@tertiary-width-z15:              9;
-@tertiary-link-width-z15:         7;
+@secondary-width-z15:             8;
+@secondary-link-width-z15:        6;
+@tertiary-width-z15:              7;
+@tertiary-link-width-z15:         5;
 @residential-width-z15:           5;
 @living-street-width-z15:         5;
 @pedestrian-width-z15:            5;
