@@ -42,7 +42,7 @@
 #amenity-points {
   [feature = 'tourism_alpine_hut'][zoom >= 13],
   [feature = 'tourism_wilderness_hut'][zoom >= 13],
-  [feature = 'amenity_shelter'][zoom >= 16] {
+  [feature = 'amenity_shelter'][zoom >= 15] {
     marker-file: url('symbols/amenity/shelter.svg');
     [feature = 'tourism_wilderness_hut'] {
       marker-file: url('symbols/tourism/wilderness_hut.svg');
@@ -232,7 +232,7 @@
     marker-placement: interior;
   }
 
-  [feature = 'tourism_camp_site'][zoom >= 16] {
+  [feature = 'tourism_camp_site'][zoom >= 15] {
     marker-file: url('symbols/tourism/camping.svg');
     marker-fill: @accommodation-icon;
     marker-placement: interior;
@@ -347,7 +347,7 @@
     marker-clip: false;
   }
 
-  [feature = 'tourism_guest_house'][zoom >= 17] {
+  [feature = 'tourism_guest_house'][zoom >= 15] {
     marker-file: url('symbols/tourism/guest_house.svg');
     marker-fill: @accommodation-icon;
     marker-placement: interior;
@@ -385,21 +385,21 @@
     marker-fill: @amenity-brown;
   }
 
-  [feature = 'tourism_hostel'][zoom >= 17] {
+  [feature = 'tourism_hostel'][zoom >= 15] {
     marker-file: url('symbols/tourism/hostel.svg');
     marker-placement: interior;
     marker-clip: false;
     marker-fill: @accommodation-icon;
   }
 
-  [feature = 'tourism_hotel'][zoom >= 17] {
+  [feature = 'tourism_hotel'][zoom >= 15] {
     marker-file: url('symbols/tourism/hotel.svg');
     marker-placement: interior;
     marker-clip: false;
     marker-fill: @accommodation-icon;
   }
 
-  [feature = 'tourism_motel'][zoom >= 17] {
+  [feature = 'tourism_motel'][zoom >= 15] {
     marker-file: url('symbols/tourism/motel.svg');
     marker-placement: interior;
     marker-clip: false;
@@ -832,7 +832,7 @@
     }
   }
 
-  [feature = 'amenity_drinking_water'][zoom >= 17] {
+  [feature = 'amenity_drinking_water'][zoom >= 15] {
     marker-file: url('symbols/amenity/drinking_water.svg');
     marker-fill: @amenity-brown;
     marker-placement: interior;
