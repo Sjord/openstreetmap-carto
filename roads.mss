@@ -1876,71 +1876,34 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
         [sac_scale = 'difficult_alpine_hiking'] {
           line/line-color: @footway-fill-alpine;
         }
-        line/line-dasharray: 1,3;
+
+        line/line-dasharray: 10,3,2,3;
+        [sac_scale = 'alpine_hiking'],
+        [sac_scale = 'hiking'] {
+          line/line-dasharray: 10,3;
+        }
+        [sac_scale = 'mountain_hiking'],
+        [sac_scale = 'demanding_alpine_hiking'] {
+          line/line-dasharray: 6,4;
+        }
+        [sac_scale = 'demanding_mountain_hiking'],
+        [sac_scale = 'difficult_alpine_hiking'] {
+          line/line-dasharray: 2,5;
+        }
         line/line-join: round;
         line/line-cap: round;
         line/line-width: @footway-width-z14;
-        [zoom >= 15][int_surface = 'paved'] {
-          line/line-dasharray: 2,3.5;
+        [zoom >= 15] {
           line/line-width: @footway-width-z15;
-          [zoom >= 16] {
-            line/line-dasharray: 3,3.5;
-            line/line-width: @footway-width-z16;
-          }
-          [zoom >= 17] {
-            line/line-dasharray: 3,3;
-          }
-          [zoom >= 18] {
-            line/line-width: @footway-width-z18;
-          }
-          [zoom >= 19] {
-            line/line-width: @footway-width-z19;
-          }
         }
-        [zoom >= 15][int_surface = null] {
-          line/line-color: @footway-fill;
-          [access = 'no'] { line/line-color: @footway-fill-noaccess; }
-          [sac_scale = 'alpine_hiking'],
-          [sac_scale = 'demanding_alpine_hiking'],
-          [sac_scale = 'difficult_alpine_hiking'] {
-            line/line-color: @footway-fill-alpine;
-          }
-          line/line-dasharray: 1,3,2,4;
-          line/line-join: round;
-          line/line-cap: round;
-          line/line-width: @footway-width-z15;
-          [zoom >= 16] {
-            line/line-dasharray: 1,4,2,3;
-            line/line-width: @footway-width-z16;
-          }
-          [zoom >= 18] {
-            line/line-width: @footway-width-z18;
-          }
-          [zoom >= 19] {
-            line/line-width: @footway-width-z19;
-          }
+        [zoom >= 16] {
+          line/line-width: @footway-width-z16;
         }
-        [zoom >= 15][int_surface = 'unpaved'] {
-          line/line-color: @footway-fill;
-          [access = 'no'] { line/line-color: @footway-fill-noaccess; }
-          [sac_scale = 'alpine_hiking'],
-          [sac_scale = 'demanding_alpine_hiking'],
-          [sac_scale = 'difficult_alpine_hiking'] {
-            line/line-color: @footway-fill-alpine;
-          }
-          line/line-dasharray: 1,4;
-          line/line-join: round;
-          line/line-cap: round;
-          line/line-width: @footway-width-z15;
-          [zoom >= 16] {
-            line/line-width: @footway-width-z16;
-          }
-          [zoom >= 18] {
-            line/line-width: @footway-width-z18;
-          }
-          [zoom >= 19] {
-            line/line-width: @footway-width-z19;
-          }
+        [zoom >= 18] {
+          line/line-width: @footway-width-z18;
+        }
+        [zoom >= 19] {
+          line/line-width: @footway-width-z19;
         }
       }
     }
