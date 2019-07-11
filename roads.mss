@@ -1945,6 +1945,12 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       }
     }
 
+    [feature = 'highway_via_ferrata'] {
+      [zoom >= 15] {
+        line-pattern-file: url('symbols/via_ferrata.svg');
+      }
+    }
+
     [feature = 'highway_cycleway'],
     [feature = 'highway_path'][bicycle = 'designated'] {
       [zoom >= 13][access != 'no'],

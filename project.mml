@@ -684,7 +684,7 @@ Layer:
         (SELECT
             way,
             COALESCE((
-              'highway_' || (CASE WHEN highway IN ('residential', 'unclassified', 'pedestrian', 'service', 'footway', 'cycleway', 'track', 'path', 'platform') THEN highway ELSE NULL END)),
+              'highway_' || (CASE WHEN highway IN ('residential', 'unclassified', 'pedestrian', 'service', 'footway', 'via_ferrata', 'cycleway', 'track', 'path', 'platform') THEN highway ELSE NULL END)),
               ('railway_' || (CASE WHEN (railway IN ('platform')
                               AND (tags->'location' NOT IN ('underground') OR (tags->'location') IS NULL)
                               AND (tunnel NOT IN ('yes', 'building_passage') OR tunnel IS NULL)
@@ -692,7 +692,7 @@ Layer:
                               THEN railway ELSE NULL END))
             ) AS feature
           FROM planet_osm_polygon
-          WHERE highway IN ('residential', 'unclassified', 'pedestrian', 'service', 'footway', 'track', 'path', 'platform')
+          WHERE highway IN ('residential', 'unclassified', 'pedestrian', 'service', 'footway', 'via_ferrata', 'track', 'path', 'platform')
             OR (railway IN ('platform')
                 AND (tags->'location' NOT IN ('underground') OR (tags->'location') IS NULL)
                 AND (tunnel NOT IN ('yes', 'building_passage') OR tunnel IS NULL)
@@ -811,7 +811,7 @@ Layer:
         (SELECT
             way,
             COALESCE(
-              ('highway_' || (CASE WHEN highway IN ('residential', 'unclassified', 'pedestrian', 'service', 'footway', 'cycleway', 'living_street',
+              ('highway_' || (CASE WHEN highway IN ('residential', 'unclassified', 'pedestrian', 'service', 'footway', 'via_ferrata', 'cycleway', 'living_street',
                                                     'track', 'path', 'platform', 'services') THEN highway ELSE NULL END)),
               ('railway_' || (CASE WHEN (railway IN ('platform')
                               AND (tags->'location' NOT IN ('underground') OR (tags->'location') IS NULL)
@@ -821,7 +821,7 @@ Layer:
               (('aeroway_' || CASE WHEN aeroway IN ('runway', 'taxiway', 'helipad') THEN aeroway ELSE NULL END))
             ) AS feature
           FROM planet_osm_polygon
-          WHERE highway IN ('residential', 'unclassified', 'pedestrian', 'service', 'footway', 'living_street', 'track', 'path', 'platform', 'services')
+          WHERE highway IN ('residential', 'unclassified', 'pedestrian', 'service', 'footway', 'via_ferrata', 'living_street', 'track', 'path', 'platform', 'services')
             OR (railway IN ('platform')
                 AND (tags->'location' NOT IN ('underground') OR (tags->'location') IS NULL)
                 AND (tunnel NOT IN ('yes', 'building_passage') OR tunnel IS NULL)
@@ -1797,7 +1797,7 @@ Layer:
             leisure,
             name
           FROM planet_osm_polygon
-          WHERE highway IN ('residential', 'unclassified', 'pedestrian', 'service', 'footway', 'cycleway', 'living_street', 'track', 'path', 'platform')
+          WHERE highway IN ('residential', 'unclassified', 'pedestrian', 'service', 'footway', 'via_ferrata', 'cycleway', 'living_street', 'track', 'path', 'platform')
             OR (railway IN ('platform')
                 AND (tags->'location' NOT IN ('underground') OR (tags->'location') IS NULL)
                 AND (tunnel NOT IN ('yes', 'building_passage') OR tunnel IS NULL)
@@ -1884,7 +1884,7 @@ Layer:
             horse,
             bicycle
           FROM planet_osm_line
-          WHERE highway IN ('bridleway', 'footway', 'cycleway', 'path', 'track', 'steps', 'construction')
+          WHERE highway IN ('bridleway', 'footway', 'via_ferrata', 'cycleway', 'path', 'track', 'steps', 'construction')
             AND (name IS NOT NULL
               OR oneway IN ('yes', '-1')
               OR junction IN ('roundabout'))
