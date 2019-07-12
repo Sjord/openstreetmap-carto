@@ -1465,6 +1465,10 @@ Layer:
               ) AS feature,
               access,
               CASE
+                WHEN tags->'ele' ~ '^-?\d{1,4}(\.\d+)?$' THEN (tags->'ele')::NUMERIC
+                ELSE NULL
+              END AS ele,
+              CASE
                 WHEN "natural" IN ('peak', 'volcano', 'saddle') THEN
                   CASE
                     WHEN tags->'ele' ~ '^-?\d{1,4}(\.\d+)?$' THEN (tags->'ele')::NUMERIC

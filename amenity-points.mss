@@ -82,40 +82,50 @@
     marker-clip: false;
   }
 
-  [feature = 'amenity_bar'][zoom >= 17],
-  [feature = 'amenity_biergarten'][zoom >= 17],
-  [feature = 'amenity_cafe'][zoom >= 17],
-  [feature = 'amenity_fast_food'][zoom >= 17],
-  [feature = 'amenity_food_court'][zoom >= 17],
-  [feature = 'amenity_ice_cream'][zoom >= 17],
-  [feature = 'amenity_pub'][zoom >= 17],
-  [feature = 'amenity_restaurant'][zoom >= 17] {
+  [feature = 'amenity_bar'][zoom >= 15],
+  [feature = 'amenity_biergarten'][zoom >= 15],
+  [feature = 'amenity_cafe'][zoom >= 15],
+  [feature = 'amenity_fast_food'][zoom >= 15],
+  [feature = 'amenity_food_court'][zoom >= 15],
+  [feature = 'amenity_ice_cream'][zoom >= 15],
+  [feature = 'amenity_pub'][zoom >= 15],
+  [feature = 'amenity_restaurant'][zoom >= 15] {
     marker-placement: interior;
     marker-clip: false;
     marker-fill: @gastronomy-icon;
-    [feature != 'amenity_food_court'][zoom = 17] {
-      marker-width: 4;
-      marker-line-width: 0;
+    marker-width: 4;
+    marker-line-width: 0;
+    [ele >= 1400],
+    [zoom >= 18] {
+      marker-width: 10;
     }
+    [feature = 'amenity_bar'][ele >= 1400],
     [feature = 'amenity_bar'][zoom >= 18] {
       marker-file: url('symbols/amenity/bar.svg');
     }
+    [feature = 'amenity_biergarten'][ele >= 1400],
     [feature = 'amenity_biergarten'][zoom >= 18] {
       marker-file: url('symbols/amenity/biergarten.svg');
     }
+    [feature = 'amenity_cafe'][ele >= 1400],
     [feature = 'amenity_cafe'][zoom >= 18] {
       marker-file: url('symbols/amenity/cafe.svg');
     }
+    [feature = 'amenity_fast_food'][ele >= 1400],
     [feature = 'amenity_fast_food'][zoom >= 18] {
       marker-file: url('symbols/amenity/fast_food.svg');
     }
-    [feature = 'amenity_food_court'][zoom >= 17],
+    [feature = 'amenity_food_court'][ele >= 1400],
+    [feature = 'amenity_food_court'][zoom >= 18],
+    [feature = 'amenity_restaurant'][ele >= 1400],
     [feature = 'amenity_restaurant'][zoom >= 18] {
       marker-file: url('symbols/amenity/restaurant.svg');
     }
+    [feature = 'amenity_ice_cream'][ele >= 1400],
     [feature = 'amenity_ice_cream'][zoom >= 18] {
       marker-file: url('symbols/shop/ice_cream.svg');
     }
+    [feature = 'amenity_pub'][ele >= 1400],
     [feature = 'amenity_pub'][zoom >= 18] {
       marker-file: url('symbols/amenity/pub.svg');
     }
@@ -874,7 +884,7 @@
     marker-fill: @shop-icon;
   }
 
-  [feature = 'tourism_viewpoint'][zoom >= 16] {
+  [feature = 'tourism_viewpoint'][zoom >= 15] {
     marker-file: url('symbols/tourism/viewpoint.svg');
     marker-placement: interior;
     marker-fill: @amenity-brown;
@@ -1387,7 +1397,7 @@
     marker-clip: false;
   }
 
-  [feature = 'tourism_picnic_site'][zoom >= 16] {
+  [feature = 'tourism_picnic_site'][zoom >= 15] {
     marker-file: url('symbols/tourism/picnic.svg');
     marker-fill: @leisure-green;
     marker-placement: interior;
@@ -1397,7 +1407,7 @@
     }
   }
 
-  [feature = 'leisure_picnic_table'][zoom >= 17] {
+  [feature = 'leisure_picnic_table'][zoom >= 15] {
     marker-file: url('symbols/tourism/picnic.svg');
     marker-fill: @man-made-icon;
     marker-placement: interior;
@@ -1711,7 +1721,7 @@
     }
   }
 
-  [feature = 'amenity_bench'][zoom >= 19]::amenity {
+  [feature = 'amenity_bench'][zoom >= 15]::amenity {
     marker-file: url('symbols/amenity/bench.svg');
     marker-fill: @man-made-icon;
     marker-placement: interior;
