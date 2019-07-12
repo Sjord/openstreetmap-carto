@@ -1779,7 +1779,7 @@
     text-placement: interior;
   }
 
-  [feature = 'place_locality'][zoom >= 16] {
+  [feature = 'place_locality'][zoom >= 15] {
     text-name: "[name]";
     text-size: 10;
     text-fill: @placenames;
@@ -1801,7 +1801,7 @@
 
   [feature = 'amenity_pub'][zoom >= 18],
   [feature = 'amenity_restaurant'][zoom >= 18],
-  [feature = 'amenity_food_court'][zoom >= 17],
+  [feature = 'amenity_food_court'][zoom >= 18],
   [feature = 'amenity_cafe'][zoom >= 18],
   [feature = 'amenity_fast_food'][zoom >= 18],
   [feature = 'amenity_biergarten'][zoom >= 18],
@@ -2029,7 +2029,7 @@
   [feature = 'natural_peak'][zoom >= 13],
   [feature = 'natural_volcano'][zoom >= 13],
   [feature = 'natural_saddle'][zoom >= 15],
-  [feature = 'tourism_viewpoint'][zoom >= 16] {
+  [feature = 'tourism_viewpoint'][zoom >= 15] {
     text-name: "[name]";
     text-size: @standard-font-size;
     text-wrap-width: @standard-wrap-width;
@@ -2600,6 +2600,7 @@
   [feature = 'amenity_shelter'][zoom >= 17],
   [feature = 'leisure_picnic_table'][zoom >= 17],
   [feature = 'tourism_hotel'][zoom >= 17],
+  [feature = 'tourism_hotel'][zoom >= 15][ele >= 1400],
   [feature = 'tourism_motel'][zoom >= 17],
   [feature = 'tourism_hostel'][zoom >= 17],
   [feature = 'tourism_chalet'][zoom >= 17],
