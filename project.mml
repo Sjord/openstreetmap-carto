@@ -50,6 +50,7 @@ Stylesheet:
   - stations.mss
   - amenity-points.mss
   - ferry-routes.mss
+  - hiking-routes.mss
   - aerialways.mss
   - admin.mss
   - addressing.mss
@@ -2085,6 +2086,24 @@ Layer:
         ) AS water_lines_text
     properties:
       minzoom: 13
+  - id: hiking-routes-text
+    geometry: linestring
+    <<: *extents
+    Datasource:
+      <<: *osm2pgsql
+      table: |-
+        (SELECT
+            way,
+            ref,
+            name,
+            tags->'network' AS network,
+            split_part(tags->'osmc:symbol', ':', 2) AS symbol_background
+          FROM planet_osm_line
+          WHERE route = 'hiking'
+            AND name IS NOT NULL
+        ) AS hiking_routes_text
+    properties:
+      minzoom: 14
   - id: ferry-routes-text
     geometry: linestring
     <<: *extents
