@@ -56,8 +56,11 @@
     marker-fill: @accommodation-icon;
     marker-placement: interior;
     marker-clip: false;
-    [access != ''][access != 'permissive'][access != 'yes'] {
+    [access != ''][access != 'permissive'][access != 'yes'][operator != 'Kandersteg International Scout Centre'] {
       marker-opacity: 0.33;
+    }
+    [feature = 'tourism_alpine_hut'][operator = 'Kandersteg International Scout Centre'] {
+      marker-file: url('symbols/tourism/alpinehut_scouts.svg');
     }
   }
 
@@ -2633,7 +2636,7 @@
     [feature = 'tourism_alpine_hut'],
     [feature = 'tourism_wilderness_hut'],
     [feature = 'amenity_shelter'] {
-      [access != ''][access != 'permissive'][access != 'yes'] {
+      [access != ''][access != 'permissive'][access != 'yes'][operator != 'Kandersteg International Scout Centre'] {
         text-opacity: 0.33;
         text-halo-radius: 0;
       }
