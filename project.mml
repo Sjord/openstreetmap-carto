@@ -2097,6 +2097,7 @@ Layer:
             ref,
             name,
             tags->'network' AS network,
+            tags->'via_ferrata_scale' AS via_ferrata_scale,
             split_part(tags->'osmc:symbol', ':', 2) AS symbol_background
           FROM planet_osm_line
           WHERE route = 'hiking'

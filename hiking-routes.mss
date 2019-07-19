@@ -14,4 +14,8 @@
     shield-margin: @shield-margin;
     shield-clip: @shield-clip;
   }
+
+  [zoom >= 15][via_ferrata_scale != ''] {
+    line-pattern-file: url('symbols/via_ferrata.svg');
+  }
 }
