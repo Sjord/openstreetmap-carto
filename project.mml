@@ -1985,7 +1985,7 @@ Layer:
           FROM planet_osm_line
           WHERE (man_made IN ('pier', 'breakwater', 'groyne', 'embankment')
               OR waterway IN ('dam', 'weir')
-              OR "natural" IN ('cliff'))
+              OR "natural" IN ('cliff', 'valley'))
             AND name IS NOT NULL
         ) AS text_line
     properties:

@@ -905,4 +905,20 @@
     text-vertical-alignment: middle;
     text-spacing: 400;
   }
+
+  [feature = 'natural_valley'][zoom >= 14] {
+    text-name: "[name]";
+    text-fill: @forest-text;
+    text-face-name: @book-fonts;
+    text-placement: line;
+    text-dy: 20;
+    text-vertical-alignment: middle;
+    text-spacing: 400;
+    text-size: 15;
+    text-opacity: 0.5;
+
+    [way_pixels >= 400] {
+      text-size: 20;
+    }
+  }
 }
