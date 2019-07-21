@@ -1870,7 +1870,7 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
           }
         }
         line/line-color: @footway-fill;
-        [access = 'no'] { line/line-color: @footway-fill-noaccess; }
+        [access = 'no'], [foot = 'no'] { line/line-color: @footway-fill-noaccess; }
         [sac_scale = 'alpine_hiking'],
         [sac_scale = 'demanding_alpine_hiking'],
         [sac_scale = 'difficult_alpine_hiking'] {
