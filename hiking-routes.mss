@@ -9,8 +9,7 @@
 
     shield-size: @shield-size;
     shield-line-spacing: @shield-line-spacing;
-    shield-spacing: @shield-spacing;
-    shield-repeat-distance: @shield-repeat-distance;
+    shield-spacing: 500;
     shield-margin: @shield-margin;
     shield-clip: @shield-clip;
   }
