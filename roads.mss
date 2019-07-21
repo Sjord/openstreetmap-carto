@@ -3293,16 +3293,37 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
   }
 
   [highway = 'bridleway'],
-  [highway = 'footway'],
   [highway = 'cycleway'],
+  [highway = 'construction'][construction = 'bridleway'],
+  [highway = 'construction'][construction = 'cycleway'] {
+    [zoom >= 16] {
+      text-name: "[name]";
+      text-fill: #222;
+      text-size: 9;
+      text-halo-radius: @standard-halo-radius;
+      text-halo-fill: @standard-halo-fill;
+      text-spacing: 300;
+      text-clip: false;
+      text-placement: line;
+      text-face-name: @book-fonts;
+      text-vertical-alignment: middle;
+      text-dy: 7;
+      text-repeat-distance: @major-highway-text-repeat-distance;
+      [highway = 'steps'] { text-repeat-distance: @minor-highway-text-repeat-distance; }
+    }
+    [zoom >= 17] {
+      text-size: 11;
+      text-dy: 9;
+    }
+  }
+
+  [highway = 'footway'],
   [highway = 'path'],
   [highway = 'steps'],
-  [highway = 'construction'][construction = 'bridleway'],
   [highway = 'construction'][construction = 'footway'],
-  [highway = 'construction'][construction = 'cycleway'],
   [highway = 'construction'][construction = 'path'],
   [highway = 'construction'][construction = 'steps'] {
-    [zoom >= 16] {
+    [zoom >= 14] {
       text-name: "[name]";
       text-fill: #222;
       text-size: 9;
