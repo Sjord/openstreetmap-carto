@@ -913,7 +913,7 @@
     text-placement: line;
     text-dy: 20;
     text-vertical-alignment: middle;
-    text-spacing: 400;
+    text-spacing: 800;
     text-size: 15;
     text-opacity: 0.5;
 
