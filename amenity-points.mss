@@ -2404,16 +2404,9 @@
   [feature = 'natural_scrub'],
   [feature = 'natural_beach'],
   [feature = 'natural_shoal'],
-  [feature = 'natural_reef'],
-  [feature = 'leisure_fitness_centre'],
-  [feature = 'leisure_fitness_station'],
-  [feature = 'leisure_sports_centre'],
-  [feature = 'leisure_stadium'],
-  [feature = 'leisure_track'],
-  [feature = 'leisure_dog_park'],
-  [feature = 'leisure_ice_rink'],
-  [feature = 'leisure_pitch'] {
+  [feature = 'natural_reef'] {
     [zoom >= 10][way_pixels > 3000][way_pixels <= 768000][is_building = 'no'],
+    [zoom >= 14][way_pixels > 300][way_pixels <= 768000][is_building = 'no'],
     [zoom >= 17][way_pixels <= 768000][is_building = 'no'],
     [zoom >= 10][way_pixels > 3000][way_pixels <= 768000][shop = 'mall'],
     [zoom >= 17][way_pixels <= 768000][shop = 'mall'] {
@@ -2526,30 +2519,6 @@
       [feature = 'natural_beach'],
       [feature = 'natural_shoal'] {
         text-fill: darken(@beach, 60%);
-      }
-      [feature = 'leisure_sports_centre'],
-      [feature = 'leisure_stadium'] {
-        text-fill: darken(@stadium, 70%);
-      }
-      [feature = 'leisure_fitness_centre'],
-      [feature = 'leisure_fitness_station'] {
-        text-fill: @leisure-green;
-        [access != ''][access != 'permissive'][access != 'yes'] {
-          text-opacity: 0.33;
-          text-halo-radius: 0;
-        }
-      }
-      [feature = 'leisure_dog_park'] {
-        text-fill: @leisure-green;
-        text-halo-radius: @standard-halo-radius * 1.5; /* Extra halo needed to stand out from paw pattern. */
-        text-halo-fill: @standard-halo-fill;
-      }
-      [feature = 'leisure_track'] {
-        text-fill: darken(@track, 40%);
-      }
-      [feature = 'leisure_ice_rink'],
-      [feature = 'leisure_pitch'] {
-        text-fill: darken(@pitch, 40%);
       }
     }
   }
