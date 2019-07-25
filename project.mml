@@ -1394,7 +1394,7 @@ Layer:
               access,
               CASE
                 WHEN tags->'ele' ~ '^-?\d{1,4}(\.\d+)?$' THEN (tags->'ele')::NUMERIC
-                ELSE NULL
+                ELSE (SELECT ST_Value(rast, way) from kandersteg)
               END AS ele,
               CASE
                 WHEN "natural" IN ('peak', 'volcano', 'saddle') THEN
