@@ -55,6 +55,7 @@ Stylesheet:
   - admin.mss
   - addressing.mss
   - hillshade.mss
+  - swissnames.mss
 Layer:
   - id: landcover-low-zoom
     geometry: polygon
@@ -2153,3 +2154,33 @@ Layer:
     srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over
     name: hillshade
     layerId: hillshade
+  - id: swissnames3dply
+    geometry: polygon
+    Datasource:
+      file: data/shp_LV95_LN02/swissNAMES3D_PLY.shp
+      type: shape
+      encoding: latin1
+    srs-name: EPSG:2056
+    srs: +proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs
+    name: swissnames3dply
+    layerId: swissnames3dply
+  - id: swissnames3dpkt
+    geometry: point
+    Datasource:
+      file: data/shp_LV95_LN02/swissNAMES3D_PKT.shp
+      type: shape
+      encoding: latin1
+    srs-name: EPSG:2056
+    srs: +proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs
+    name: swissnames3dpkt
+    layerId: swissnames3dpkt
+  - id: swissnames3dlin
+    geometry: linestring
+    Datasource:
+      file: data/shp_LV95_LN02/swissNAMES3D_LIN.shp
+      type: shape
+      encoding: latin1
+    srs-name: EPSG:2056
+    srs: +proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs
+    name: swissnames3dlin
+    layerId: swissnames3dlin
