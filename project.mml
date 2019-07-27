@@ -56,6 +56,7 @@ Stylesheet:
   - addressing.mss
   - hillshade.mss
   - swissnames.mss
+  - fixed-text.mss
 Layer:
   - id: landcover-low-zoom
     geometry: polygon
@@ -2187,3 +2188,13 @@ Layer:
     name: swissnames3dlin
     layerId: swissnames3dlin
     status: 0
+  - id: fixed-text
+    class: fixed-text
+    geometry: point
+    <<: *extents
+    Datasource:
+      <<: *osm2pgsql
+      table: |-
+        (SELECT ST_Point(868697, 5869188) AS way) AS fixed_text_points
+    properties:
+      minzoom: 14
