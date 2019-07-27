@@ -21,7 +21,7 @@ psql -d gis -c 'CREATE EXTENSION postgis; CREATE EXTENSION hstore;'
 then grab some OSM data. It's probably easiest to grab an PBF of OSM data from [Geofabrik](https://download.geofabrik.de/). Once you've done that, import with osm2pgsql:
 
 ```
-osm2pgsql -G --hstore --style openstreetmap-carto.style --tag-transform-script openstreetmap-carto.lua -d gis ~/path/to/data.osm.pbf
+osm2pgsql --create --database gis --hstore --multi-geometry --slim -S openstreetmap-carto/openstreetmap-carto.style --tag-transform-script openstreetmap-carto/openstreetmap-carto.lua  maps/switzerland-latest.osm.pbf
 ```
 
 You can find a more detailed guide to setting up a database and loading data with osm2pgsql at [switch2osm.org](https://switch2osm.org/manually-building-a-tile-server-16-04-2-lts/).
@@ -57,6 +57,27 @@ You can also download them manually at the following paths:
 The repeated www.naturalearthdata.com in the Natural Earth shapefiles is correct.
 
 Put these shapefiles at `path/to/openstreetmap-carto/data`.
+
+## Hillshade
+
+* Download DEM data. For Switzerland, get E40N20 from [EU-DEM](https://land.copernicus.eu/imagery-in-situ/eu-dem/eu-dem-v1.1).
+* Transform the DEM to the proper coordinate system (EPSG:3857) using `gdalwarp`. The following command transforms the coordinate system and crops the DEM to contain only Switzerland:
+```
+gdalwarp -t_srs EPSG:3857 -r bilinear -te 667916 5621521 1224514 6106854 eu_dem_v11_E40N20.TIF swiss.tif    
+```
+* Use `gdaldem` to create a hillshade TIFF:
+
+```
+gdaldem hillshade swiss.tif hillshade.tif
+```
+
+## Swiss names 3D
+
+The [swissNAMES3D](https://shop.swisstopo.admin.ch/en/products/landscape/names3D) data set contains names of points, ways and areas in Switzerland. This data is more or less licensed CC-BY-NC. It can be used on OpenStreetMap, according to swisstopo:
+
+> We are pleased to confirm that the data of swissNames3D may be added to OpenStreetMap. May we kindly ask you to add a clearly visible source reference with the following wording:
+> 
+> “Source: Federal Office of Topography”
 
 ## Fonts
 The stylesheet uses Noto, an openly licensed font family from Google with support for multiple scripts. The stylesheet uses Noto's "Sans" style where available. If not available, this stylesheet uses another appropriate style of the Noto family. The "UI" version is used where available, with its vertical metrics which fit better with Latin text.
