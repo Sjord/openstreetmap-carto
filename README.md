@@ -23,6 +23,7 @@ for full details.
 There are many open-source stylesheets written for creating OpenStreetMap-based
 maps using Mapnik, many based on this project. Some alternatives are:
 
+* [OpenStreetMap Carto - hiking trails (esp. Czech)](https://github.com/OpenGrabeso/openstreetmap-carto-hiking-cz)
 * [OpenStreetMap Carto](https://github.com/gravitystorm/openstreetmap-carto)
 * [OSM-Bright](https://github.com/mapbox/osm-bright)
 * [XML-based stylesheets](https://trac.openstreetmap.org/browser/subversion/applications/rendering/mapnik)
