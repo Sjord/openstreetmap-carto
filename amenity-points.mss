@@ -608,6 +608,15 @@
     }
   }
 
+  [feature = 'man_made_flagpole'] {
+    [zoom >= 16] {
+      marker-file: url('symbols/man_made/flagpole.svg');
+      marker-fill: @man-made-icon;
+      marker-placement: interior;
+      marker-clip: false;
+    }
+  }
+
   [feature = 'man_made_telescope']["telescope:type" != 'optical']["telescope:type" != null] {
     [zoom >= 14]["telescope:diameter" >= 60],
     [zoom >= 15]["telescope:diameter" >= 30],
