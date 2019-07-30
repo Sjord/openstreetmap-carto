@@ -1564,6 +1564,15 @@
     marker-clip: false;
   }
 
+  [feature = 'natural_rock'][zoom >= 15],
+  [feature = 'natural_stone'][zoom >= 15] {
+    marker-width: 6;
+    marker-line-width: 0;
+    marker-fill: #c9c7c4;
+    marker-fill-opacity: 0.7;
+    marker-allow-overlap: true;
+  }
+
   [feature = 'waterway_waterfall'] {
     [zoom >= 13][height > 20],
     [zoom >= 14][height > 10],
@@ -2986,6 +2995,8 @@
   [feature = 'natural_scree'][zoom >= 9],
   [feature = 'natural_shingle'][zoom >= 9],
   [feature = 'natural_bare_rock'],
+  [feature = 'natural_rock'],
+  [feature = 'natural_stone'],
   [feature = 'natural_sand'] {
     [zoom >= 8][way_pixels > 3000][way_pixels <= 768000][is_building = 'no'],
     [zoom >= 17][way_pixels <= 768000][is_building = 'no'] {
