@@ -902,7 +902,7 @@
     text-size: 10;
     text-face-name: @book-fonts;
     text-placement: line;
-    text-dy: 8;
+    text-dy: 10;
     text-vertical-alignment: middle;
     text-spacing: 400;
   }
