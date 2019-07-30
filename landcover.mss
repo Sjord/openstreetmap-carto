@@ -487,6 +487,7 @@
     }
   }
 
+  [feature = 'natural_rock'][zoom >= 5],
   [feature = 'natural_bare_rock'][zoom >= 5] {
     polygon-fill: @bare_ground;
     polygon-pattern-file: url('symbols/rock_overlay.png');
