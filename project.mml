@@ -1345,7 +1345,7 @@ Layer:
                                                     'motorcycle_parking', 'nightclub', 'nursing_home', 'pharmacy', 'place_of_worship', 'police', 'post_box',
                                                     'post_office', 'prison', 'pub', 'public_bath', 'public_bookcase', 'recycling', 'restaurant', 'school',
                                                     'shelter', 'shower', 'social_facility', 'taxi', 'telephone', 'theatre', 'toilets', 'townhall',
-                                                    'university', 'vehicle_inspection', 'veterinary') THEN amenity ELSE NULL END,
+                                                    'university', 'vehicle_inspection', 'veterinary', 'water_point') THEN amenity ELSE NULL END,
                 'amenity_' || CASE WHEN amenity IN ('waste_disposal') AND way_area IS NOT NULL THEN amenity ELSE NULL END, -- Waste disposal points are rendered in the low priority layer
                 'amenity_' || CASE WHEN amenity IN ('parking_entrance')
                                         AND tags->'parking' IN ('underground')

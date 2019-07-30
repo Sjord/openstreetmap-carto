@@ -858,6 +858,7 @@
     }
   }
 
+  [feature = 'amenity_water_point'][zoom >= 15],
   [feature = 'amenity_drinking_water'][zoom >= 15] {
     marker-file: url('symbols/amenity/drinking_water.svg');
     marker-fill: @amenity-brown;
