@@ -609,7 +609,7 @@
   }
 
   [feature = 'man_made_flagpole'] {
-    [zoom >= 16] {
+    [zoom >= 19] {
       marker-file: url('symbols/man_made/flagpole.svg');
       marker-fill: @man-made-icon;
       marker-placement: interior;
