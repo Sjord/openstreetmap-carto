@@ -2196,6 +2196,6 @@ Layer:
     Datasource:
       <<: *osm2pgsql
       table: |-
-        (SELECT ST_Point(868697, 5869188) AS way) AS fixed_text_points
+        (SELECT ST_Point(868697, 5869188) AS way, CURRENT_DATE::text AS date) AS fixed_text_points
     properties:
       minzoom: 14
