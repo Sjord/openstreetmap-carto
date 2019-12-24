@@ -20,6 +20,7 @@
 @barrier-icon: #3f3f3f;
 @landform-color: #d08f55;
 @leisure-green: darken(@park, 60%);
+@protected-area: #008000;
 @aboriginal: #82643a;
 @religious-icon: #000000;
 
@@ -1481,7 +1482,8 @@
       [feature = 'amenity_parking'] { marker-file: url('symbols/amenity/parking.svg'); }
       [feature = 'amenity_bicycle_parking'] { marker-file: url('symbols/amenity/bicycle_parking.svg'); }
       [feature = 'amenity_motorcycle_parking'] { marker-file: url('symbols/amenity/motorcycle_parking.svg'); }
-      [feature = 'amenity_parking_entrance'] { marker-file: url('symbols/amenity/parking_entrance.svg'); }
+      [feature = 'amenity_parking_entrance']["parking"='underground'] { marker-file: url('symbols/amenity/parking_entrance_underground.svg'); }
+      [feature = 'amenity_parking_entrance']["parking"='multi-storey'] { marker-file: url('symbols/amenity/parking_entrance_multistorey.svg'); }
       marker-clip: false;
       marker-fill: @transportation-icon;
       [access != ''][access != 'permissive'][access != 'yes'] { marker-opacity: 0.33; }
@@ -2106,7 +2108,7 @@
       [feature = 'boundary_national_park'],
       [feature = 'leisure_nature_reserve'],
       [feature = 'boundary_protected_area'] {
-        text-fill: darken(@park, 70%);
+        text-fill: @protected-area;
       }
     }
   }
@@ -2931,7 +2933,7 @@
   [feature = 'amenity_parking'],
   [feature = 'amenity_bicycle_parking'],
   [feature = 'amenity_motorcycle_parking'],
-  [feature = 'amenity_parking_entrance'] {
+  [feature = 'amenity_parking_entrance']["parking"='underground'] {
     [zoom >= 14][way_pixels > 3000],
     [zoom >= 18] {
       text-name: "[name]";
