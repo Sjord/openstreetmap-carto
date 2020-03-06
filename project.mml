@@ -137,7 +137,6 @@ Layer:
               OR tourism IN ('camp_site', 'caravan_site', 'picnic_site')
               OR highway IN ('services', 'rest_area')
               OR railway = 'station')
-              AND way_area > 1*!pixel_width!::real*!pixel_height!::real
           ) AS landcover
           ORDER BY way_area DESC, feature
         ) AS features
@@ -245,7 +244,6 @@ Layer:
               OR landuse IN ('reservoir', 'basin')
               OR "natural" IN ('water', 'glacier'))
             AND building IS NULL
-            AND way_area > 1*!pixel_width!::real*!pixel_height!::real
           ORDER BY COALESCE(layer,0), way_area DESC
         ) AS water_areas
     properties:
@@ -291,7 +289,6 @@ Layer:
           FROM planet_osm_polygon
           WHERE ("natural" IN ('mud', 'wetland', 'wood', 'beach', 'shoal', 'reef', 'scrub') OR landuse = 'forest')
             AND building IS NULL
-            AND way_area > 1*!pixel_width!::real*!pixel_height!::real
           ORDER BY COALESCE(layer,0), way_area DESC
         ) AS landcover_area_symbols
     properties:
@@ -442,7 +439,6 @@ Layer:
           FROM planet_osm_polygon
           WHERE building IS NOT NULL
             AND building != 'no'
-            AND way_area > 1*!pixel_width!::real*!pixel_height!::real
           ORDER BY COALESCE(layer,0), way_area DESC
         ) AS buildings
     properties:
