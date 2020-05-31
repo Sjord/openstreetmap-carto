@@ -29,6 +29,7 @@ maps using Mapnik, many based on this project. Some alternatives are:
 * [XML-based stylesheets](https://trac.openstreetmap.org/browser/subversion/applications/rendering/mapnik)
 * [osmfr-cartocss](https://github.com/cquest/osmfr-cartocss)
 * [openstreetmap-carto-german](https://github.com/giggls/openstreetmap-carto-de)
+* [OpenArdenneMap](https://github.com/nobohan/OpenArdenneMap)
 
 # Maintainers
 
